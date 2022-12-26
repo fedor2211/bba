@@ -1,0 +1,46 @@
+ru:
+  app:
+    name: "Шашлыки"
+    company: "Фёдор С."
+  activerecord:
+    models:
+      user: "Пользователь"
+      event: "Событие"
+
+    attributes:
+      user:
+        email: "Email"
+        name: "Имя"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+      event:
+        title: "Название"
+        address: "Место проведения"
+        datetime: "Дата и время"
+        description: "Описание"
+
+  controllers:
+    events:
+      created: "Вы создали новое мероприятие"
+      updated: "Вы обновили мероприятие"
+      destroyed: "Вы удалили мероприятие :("
+    users:
+      updated: "Вы обновили свой профиль"
+
+  views:
+    users:
+      events_organized: "Организовал:"
+      no_events_organized: "Пользователь пока не организовал ни одного события"
+      edit_profile: "Редактировать профиль"
+    events:
+      plural: "События"
+      create_action: "Создать событие"
+      update_action: "Обновить событие"
+      new_form_title: "Новое событие"
+      form_save_label: "Сохранить"
+    links:
+      back: "Назад"
+      profile: "Профиль"
+      sign_out: "Выйти"
+      sign_in: "Вход"
+      sign_up: "Регистрация"

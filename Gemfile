@@ -10,7 +10,9 @@ gem "actionmailer", "~> 7.0"
 gem "jsbundling-rails"
 gem "sprockets-rails", "~> 3.4"
 gem "turbo-rails", "~> 1.3"
+gem "rails-i18n", "~> 7.0"
+gem "devise-i18n", "~> 1.10"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[mri mingw x64_mingw]
 end

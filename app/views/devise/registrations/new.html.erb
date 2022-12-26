@@ -1,28 +1,26 @@
-<h2 class="mb-3">Регистрация</h2>
+<h2 class="mb-3"><%= I18n.t("devise.registrations.sign_up") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false } ) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field mb-3 col-6">
-    <%= f.label :email, "Электронная почта", class: "form-label" %><br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "Электронаая почта", class: "form-control" %>
+    <%= f.label :email, class: "form-label" %><br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
   <div class="field mb-3 col-6">
-    <%= f.label :password, "Пароль", class: "form-label" %>
-    <% if @minimum_password_length %>
-    <em class="form-text">(<%= @minimum_password_length %> символов минимум)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "Пароль", class: "form-control" %>
+    <%= f.label :password, class: "form-label" %>
+    <em class="form-text"><%= I18n.t("devise.registrations.password_min_length", length: @minimum_password_length) %></em>
+    <%= f.password_field :password, autocomplete: "password", class: "form-control" %>
   </div>
 
   <div class="field mb-3 col-6">
-    <%= f.label :password_confirmation, "Подтверждение пароля", class: "form-label" %><br>
-    <%= f.password_field :password_confirmation, autocomplete: "Подтверждение пароля", class: "form-control" %>
+    <%= f.label :password_confirmation, class: "form-label" %><br>
+    <%= f.password_field :password_confirmation, autocomplete: "password-confirmation", class: "form-control" %>
   </div>
 
   <div class="actions mb-3 col-6">
-    <%= f.submit "Зарегистрироваться", class: "btn btn-primary", data: { turbo_method: :post } %>
+    <%= f.submit I18n.t("devise.registrations.new.sign_up_action"), class: "btn btn-primary", data: { turbo_method: :post } %>
   </div>
 <% end %>
 

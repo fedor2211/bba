@@ -30,4 +30,24 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app:
+    name: "BBQ"
+    company: "Fedor S."
+  views:
+    navbar:
+      profile_link: "Profile"
+      sign_out_link: "Sign out"
+      sign_in_link: "Sign in"
+      sign_up_link: "Sign up"
+    users:
+      events_organized: "Events organized:"
+      no_events_organized: "The user did not organize any event"
+      edit_profile: "Edit profile"
+    events:
+      plural: "Events"
+      create_action: "Create event"
+      update_action: "Update event"
+      new_form_title: "New event"
+      form_save_label: "Save"
+    links:
+      back: "Back"

@@ -1,25 +1,25 @@
-<h2 class="mb-3">Вход</h2>
+<h2 class="mb-3"><%= I18n.t("devise.sessions.new.sign_in") %></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
   <div class="field mb-3 col-6">
-    <%= f.label :email, "Электронная почта", class: "form-label" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "Электронная почта", class: "form-control" %>
+    <%= f.label :email, class: "form-label" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
   <div class="field mb-3 col-6">
-    <%= f.label :password, "Пароль", class: "form-label" %><br />
-    <%= f.password_field :password, autocomplete: "Пароль", class: "form-control" %>
+    <%= f.label :password, class: "form-label" %><br />
+    <%= f.password_field :password, autocomplete: "password", class: "form-control" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="field mb-3 col-6">
       <%= f.check_box :remember_me, class: "form-check-input" %>
-      <%= f.label "Запомнить меня", class: "form-check-label" %>
+      <%= f.label :remember_me, class: "form-check-label" %>
     </div>
   <% end %>
 
   <div class="actions col-6">
-    <%= f.submit "Войти", class: "btn btn-primary mb-3" %>
+    <%= f.submit I18n.t("devise.sessions.new.sign_in_action"), class: "btn btn-primary mb-3" %>
   </div>
 <% end %>
 
