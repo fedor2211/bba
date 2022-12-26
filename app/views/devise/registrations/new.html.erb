@@ -10,7 +10,7 @@
 
   <div class="field mb-3 col-6">
     <%= f.label :password, class: "form-label" %>
-    <em class="form-text"><%= I18n.t("devise.registrations.password_min_length", length: @minimum_password_length) %></em>
+    <em class="form-text"><%= I18n.t("devise.shared.minimum_password_length", count: @minimum_password_length) %></em>
     <%= f.password_field :password, autocomplete: "password", class: "form-control" %>
   </div>
 
