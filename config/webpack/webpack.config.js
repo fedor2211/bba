@@ -1,7 +1,7 @@
 const path    = require("path")
 const webpack = require("webpack")
 
-const mode = process.env.NODE_ENV ? "development" : process.env.NODE_ENV;
+const mode = !process.env.NODE_ENV ? "development" : process.env.NODE_ENV;
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');

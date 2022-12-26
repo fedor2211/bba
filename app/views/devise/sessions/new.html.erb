@@ -1,25 +1,25 @@
-<h2>Log in</h2>
+<h2 class="mb-3">Вход</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+  <div class="field mb-3 col-6">
+    <%= f.label :email, "Электронная почта", class: "form-label" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "Электронная почта", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="field mb-3 col-6">
+    <%= f.label :password, "Пароль", class: "form-label" %><br />
+    <%= f.password_field :password, autocomplete: "Пароль", class: "form-control" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="field mb-3 col-6">
+      <%= f.check_box :remember_me, class: "form-check-input" %>
+      <%= f.label "Запомнить меня", class: "form-check-label" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="actions col-6">
+    <%= f.submit "Войти", class: "btn btn-primary mb-3" %>
   </div>
 <% end %>
 
