@@ -24,18 +24,24 @@ ru:
       created: "Вы создали новое мероприятие"
       updated: "Вы обновили мероприятие"
       destroyed: "Вы удалили мероприятие :("
+      destroy:
+        success: "Событие удалено"
     users:
       updated: "Вы обновили свой профиль"
 
   views:
     users:
       events_organized: "Организовал:"
-      no_events_organized: "Пользователь пока не организовал ни одного события"
+      no_events_organized: "Пользователь пока не организовал ни одного мероприятия"
       edit_profile: "Редактировать профиль"
     events:
       plural: "События"
       create_action: "Создать событие"
-      update_action: "Обновить событие"
+      update_action: "Обновить"
+      destroy:
+        action: "Удалить"
+        success: "Событие удалено"
+        are_you_sure: "Вы действительно хотите удалить это мероприятие"
       new_form_title: "Новое событие"
       form_save_label: "Сохранить"
     links:

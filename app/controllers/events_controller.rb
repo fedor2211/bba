@@ -38,7 +38,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-      redirect_to @event, notice: I18n.t("controllers.events.destroyed")
+    redirect_to root_path, notice: I18n.t("controllers.events.destroy.success")
   end
 
   private

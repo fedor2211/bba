@@ -47,7 +47,15 @@ en:
       plural: "Events"
       create_action: "Create event"
       update_action: "Update event"
+      destroy:
+        action: "Delete"
+        success: "The event has been deleted"
+        are_you_sure: "Are you sure you want to delete this event?"
       new_form_title: "New event"
       form_save_label: "Save"
     links:
       back: "Back"
+      profile: "Profile"
+      sign_out: "Sign out"
+      sign_in: "Sign in"
+      sign_up: "Sign up"

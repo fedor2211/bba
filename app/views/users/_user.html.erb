@@ -1,9 +1,11 @@
 <div class="text-center">
   <h1><%= user.name %></h1>
 
-  <%= image_tag user_avatar(@user) %>
+  <%= image_tag user_avatar(user) %>
 
-  <p class="buffer-top">
-    <%= link_to I18n.t("views.users.edit_profile"), edit_user_registration_path(user), class: "btn btn-primary" %>
-  </p>
+  <% if user == current_user %>
+    <div>
+      <%= link_to I18n.t("views.users.edit_profile"), edit_user_registration_path(user), class: "btn btn-primary m-1" %>
+    </div>
+  <% end %>
 </div>
