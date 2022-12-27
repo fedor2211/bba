@@ -30,6 +30,10 @@ ru:
         user_name: "Имя пользователя"
         user_email: "Email"
 
+    errors:
+      events:
+        user_error: "Нельзя подписаться на своё событие"
+
 
   controllers:
     events:

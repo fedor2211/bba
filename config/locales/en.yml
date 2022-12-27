@@ -33,6 +33,11 @@ en:
   app:
     name: "BBQ"
     company: "Fedor S."
+  activerecord:
+    errors:
+      events:
+        user_error: "Subscription to owned event is impossible"
+
   views:
     navbar:
       profile_link: "Profile"
