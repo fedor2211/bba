@@ -33,6 +33,7 @@ ru:
     errors:
       events:
         user_error: "Нельзя подписаться на своё событие"
+        event_error: "Пользователь с данным email уже зарегистрирован"
 
 
   controllers:
