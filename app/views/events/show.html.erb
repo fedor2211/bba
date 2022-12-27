@@ -1,5 +1,7 @@
 <div class="event">
-  <div class="event-info row">
+  <div class="event-info row rounded">
+    <%= content_tag 'div', '', class: 'event-background',
+      style: "background-image: url(#{asset_path('event_thumb.jpg')})" %>
     <div class="col-md-12">
 
       <div class="event-info-inner row p-3">
@@ -20,6 +22,45 @@
                 class: "btn btn-danger m-1", form: { data: { turbo_confirm: I18n.t("views.events.destroy.are_you_sure") } }, method: :delete %>
             </div>
           <% end%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="event-comments buffer-top">
+        <div class="my-3">
+          <%= render partial: "comments/form", locals: {
+            comment: @new_comment || @event.comments.build,
+            event: @event
+          } %>
+        </div>
+        <div class="my-3">
+          <h4 class="py-3 border-bottom"><%= I18n.t("views.comments.plural") %></h4>
+          <%= render partial: "comments/comment",
+            collection: @event.comments.except(@new_comment) %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="event-owner mb-3">
+        <h4><%= I18n.t("views.events.host") %></h4>
+          <p><%= render partial: 'users/user', object: @event.user %></p>
+      </div>
+      <div class="event-subscriptions mb-3">
+        <h4><%= I18n.t("views.events.participants") %></h4>
+        <div class="d-flex flex-column">
+          <%= render partial: "subscriptions/subscription",
+            collection: @event.subscriptions.except(@new_subscription) %>
+        </div>
+      </div>
+      <div class="event-subscription-form mb-3">
+        <h4><%= I18n.t("views.subscriptions.form_title") %></h4>
+        <div>
+          <%= render partial: "subscriptions/form", locals: {
+            event: @event,
+            subscription: @new_subscription || @event.subscriptions.build
+          } %>
         </div>
       </div>
     </div>

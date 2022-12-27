@@ -2,13 +2,14 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[show]
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_current_user, only: %i[edit update destroy]
-  helper_method :current_user_can_edit?
 
   def index
     @events = Event.all
   end
 
   def show
+    @new_comment = @event.comments.build(params[:comment])
+    @new_subscription = @event.subscriptions.build(params[:subscription])
   end
 
   def new
@@ -53,9 +54,5 @@ class EventsController < ApplicationController
 
   def set_current_user
     @event = current_user.events.find(params[:id])
-  end
-
-  def current_user_can_edit?(event)
-    user_signed_in? && event.user == current_user
   end
 end

@@ -1,0 +1,18 @@
+<div class="subscription mb-1">
+  <% if subscription.user.present? %>
+    <%= render partial: 'users/user', object: subscription.user %>
+  <% else %>
+    <em><%= subscription.user_name %></em>
+  <% end %>
+  <% if current_user_can_edit?(subscription) %>
+    <%= link_to(
+          fa_icon("user-minus"),
+          event_subscription_path(subscription.event, subscription),
+          data: {
+            turbo_confirm: I18n.t('views.subscriptions.destroy.confirm'),
+            turbo_method: :delete
+          },
+          class: "ms-1"
+        ) %>
+  <% end %>
+</div>

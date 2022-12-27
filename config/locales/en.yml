@@ -53,6 +53,12 @@ en:
         are_you_sure: "Are you sure you want to delete this event?"
       new_form_title: "New event"
       form_save_label: "Save"
+      host: "Host:"
+      participants: "Participants:"
+    comments:
+      destroy:
+        action: "Delete"
+        confirm: "Are you sure you want to delete this comment?"
     links:
       back: "Back"
       profile: "Profile"

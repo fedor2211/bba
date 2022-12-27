@@ -6,6 +6,8 @@ ru:
     models:
       user: "Пользователь"
       event: "Событие"
+      comment: "Комментарий"
+      subscription: "Подписка"
 
     attributes:
       user:
@@ -18,6 +20,16 @@ ru:
         address: "Место проведения"
         datetime: "Дата и время"
         description: "Описание"
+        subscribers: "Подписчики"
+        comments: "Комментарии"
+      comment:
+        body: "Текст"
+        user_name: "Имя пользователя"
+        user_email: "Email"
+      subscription:
+        user_name: "Имя пользователя"
+        user_email: "Email"
+
 
   controllers:
     events:
@@ -28,6 +40,14 @@ ru:
         success: "Событие удалено"
     users:
       updated: "Вы обновили свой профиль"
+    subscriptions:
+      created: "Вы подписаны на это событие"
+      destroyed: "Участник отписан"
+      error: "Подписка/отписка не сработала"
+    comments:
+      created: "Вы добавили комментарий к событию"
+      destroyed: "Вы удалили комментарий к событию"
+      error: "Ошибка при операции с комментарием"
 
   views:
     users:
@@ -44,6 +64,20 @@ ru:
         are_you_sure: "Вы действительно хотите удалить это мероприятие"
       new_form_title: "Новое событие"
       form_save_label: "Сохранить"
+      host: "Зовёт:"
+      participants: "Пойдут:"
+    comments:
+      destroy:
+        action: "Удалить"
+        confirm: "Вы действительно хотите удалить комменарий?"
+      new: "Добавить комментарий"
+      plural: "Комментарии"
+    subscriptions:
+      destroy:
+        action: "Отписаться"
+        confirm: "Вы уверены, что хотите удалить эту подписку?"
+      create: "Подписаться"
+      form_title: "Я пойду:"
     links:
       back: "Назад"
       profile: "Профиль"

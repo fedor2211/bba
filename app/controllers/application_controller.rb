@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
       keys: %i[password password_confirmation current_password]
     )
   end
+
+  def current_user_can_edit?(model)
+    user_signed_in? && (
+      model.user == current_user ||
+      (model.try(:event).present? && model.event.user == current_user)
+    )
+  end
+
 end

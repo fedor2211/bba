@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :events, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :subscriptions
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :email, presence: true, uniqueness: true
@@ -15,5 +17,10 @@ class User < ApplicationRecord
 
   def set_name
     self.name = "Товарисч №#{rand(777)}" if name.blank?
+  end
+
+  def link_subscriptions
+    Subscriptions.where(user_id: nil, user_email: self.email)
+                 .update_all(user_id: self.id)
   end
 end
