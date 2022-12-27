@@ -49,20 +49,22 @@
       </div>
       <div class="event-subscriptions mb-3">
         <h4><%= I18n.t("views.events.participants") %></h4>
-        <div class="d-flex flex-column">
-          <%= render partial: "subscriptions/subscription",
-            collection: @event.subscriptions.except(@new_subscription) %>
-        </div>
+          <div class="d-flex flex-column">
+            <%= render partial: "subscriptions/subscription",
+              collection: @event.subscriptions.except(@new_subscription) %>
+          </div>
       </div>
-      <div class="event-subscription-form mb-3">
-        <h4><%= I18n.t("views.subscriptions.form_title") %></h4>
-        <div>
-          <%= render partial: "subscriptions/form", locals: {
-            event: @event,
-            subscription: @new_subscription || @event.subscriptions.build
-          } %>
+      <% if current_user_can_subscribe?(@event) %>
+        <div class="event-subscription-form mb-3">
+          <h4><%= I18n.t("views.subscriptions.form_title") %></h4>
+          <div>
+            <%= render partial: "subscriptions/form", locals: {
+              event: @event,
+              subscription: @new_subscription || @event.subscriptions.build
+            } %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
