@@ -1,4 +1,4 @@
-<h4><%= I18n.t("views.comments.new") %></h4>
+<h4><%= t("views.comments.new") %></h4>
 
 <%= form_for [event, comment], data: { turbo: false } do |f| %>
   <%= render "partials/form_errors", resource: comment %>

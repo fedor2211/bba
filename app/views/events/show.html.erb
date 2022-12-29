@@ -16,10 +16,10 @@
 
           <% if current_user_can_edit?(@event) %>
             <div class="d-flex justify-content-start">
-              <%= link_to I18n.t("views.events.update_action"), edit_event_path(@event),
+              <%= link_to t(".events.update_action"), edit_event_path(@event),
                 class: "btn btn-primary m-1" %>
-              <%= button_to I18n.t("views.events.destroy.action"), event_path(@event),
-                class: "btn btn-danger m-1", form: { data: { turbo_confirm: I18n.t("views.events.destroy.are_you_sure") } }, method: :delete %>
+              <%= button_to t(".events.destroy.action"), event_path(@event),
+                class: "btn btn-danger m-1", form: { data: { turbo_confirm: t(".events.destroy.are_you_sure") } }, method: :delete %>
             </div>
           <% end%>
         </div>
@@ -36,7 +36,7 @@
           } %>
         </div>
         <div class="my-3">
-          <h4 class="py-3 border-bottom"><%= I18n.t("views.comments.plural") %></h4>
+          <h4 class="py-3 border-bottom"><%= t("views.comments.plural") %></h4>
           <%= render partial: "comments/comment",
             collection: @event.comments.except(@new_comment) %>
         </div>
@@ -44,11 +44,11 @@
     </div>
     <div class="col-md-4">
       <div class="event-owner mb-3">
-        <h4><%= I18n.t("views.events.host") %></h4>
+        <h4><%= t("views.events.host") %></h4>
           <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       <div class="event-subscriptions mb-3">
-        <h4><%= I18n.t("views.events.participants") %></h4>
+        <h4><%= t("views.events.participants") %></h4>
           <div class="d-flex flex-column">
             <%= render partial: "subscriptions/subscription",
               collection: @event.subscriptions.except(@new_subscription) %>
@@ -56,7 +56,7 @@
       </div>
       <% if current_user_can_subscribe?(@event) %>
         <div class="event-subscription-form mb-3">
-          <h4><%= I18n.t("views.subscriptions.form_title") %></h4>
+          <h4><%= t("views.subscriptions.form_title") %></h4>
           <div>
             <%= render partial: "subscriptions/form", locals: {
               event: @event,

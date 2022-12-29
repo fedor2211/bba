@@ -4,7 +4,6 @@ class Subscription < ApplicationRecord
 
   validate :not_event_host
   validate :user_email_unique
-  validates :event, presence: true
 
   validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
   validates :user_name, presence: true, unless: -> { user.present? }
@@ -23,10 +22,14 @@ class Subscription < ApplicationRecord
   private
 
   def not_event_host
-    errors.add(:base, I18n.t("activerecord.errors.events.user_error")) if event.user == user
+    errors.add(
+      :base, I18n.t("activerecord.errors.events.user_error")
+    ) if event.user == user
   end
 
   def user_email_unique
-    errors.add(:base, I18n.t("activerecord.errors.events.event_error")) if User.where(email: user_email).exists?
+    errors.add(
+      :base, I18n.t("activerecord.errors.events.event_error")
+    ) if !user.present? && User.where(email: user_email).exists?
   end
 end

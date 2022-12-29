@@ -9,7 +9,7 @@
           fa_icon("user-minus"),
           event_subscription_path(subscription.event, subscription),
           data: {
-            turbo_confirm: I18n.t('views.subscriptions.destroy.confirm'),
+            turbo_confirm: t('views.subscriptions.destroy.confirm'),
             turbo_method: :delete
           },
           class: "ms-1"

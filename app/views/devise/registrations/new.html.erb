@@ -1,4 +1,4 @@
-<h2 class="mb-3"><%= I18n.t("devise.registrations.sign_up") %></h2>
+<h2 class="mb-3"><%= t("devise.registrations.sign_up") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false } ) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -10,7 +10,7 @@
 
   <div class="field mb-3 col-6">
     <%= f.label :password, class: "form-label" %>
-    <em class="form-text"><%= I18n.t("devise.shared.minimum_password_length", count: @minimum_password_length) %></em>
+    <em class="form-text"><%= t("devise.shared.minimum_password_length", count: @minimum_password_length) %></em>
     <%= f.password_field :password, autocomplete: "password", class: "form-control" %>
   </div>
 
@@ -20,7 +20,7 @@
   </div>
 
   <div class="actions mb-3 col-6">
-    <%= f.submit I18n.t("devise.registrations.new.sign_up_action"), class: "btn btn-primary", data: { turbo_method: :post } %>
+    <%= f.submit t("devise.registrations.new.sign_up_action"), class: "btn btn-primary", data: { turbo_method: :post } %>
   </div>
 <% end %>
 

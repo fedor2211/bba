@@ -1,4 +1,4 @@
-<h2 class="mb-3"><%= I18n.t("devise.sessions.new.sign_in") %></h2>
+<h2 class="mb-3"><%= t("devise.sessions.new.sign_in") %></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
   <div class="field mb-3 col-6">
@@ -19,7 +19,7 @@
   <% end %>
 
   <div class="actions col-6">
-    <%= f.submit I18n.t("devise.sessions.new.sign_in_action"), class: "btn btn-primary mb-3" %>
+    <%= f.submit t("devise.sessions.new.sign_in_action"), class: "btn btn-primary mb-3" %>
   </div>
 <% end %>
 

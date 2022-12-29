@@ -1,4 +1,4 @@
-<h2><%= I18n.t("devise.registrations.edit.title") %></h2>
+<h2><%= t("devise.registrations.edit.title") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: { turbo: false } ) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -17,9 +17,9 @@
   <div class="field mb-3 col-6">
     <%= f.label :password, class: "form-label" %>
     <% if @minimum_password_length %>
-      <em class="form-text"><%= I18n.t("devise.shared.minimum_password_length", count: @minimum_password_length) %></em>
+      <em class="form-text"><%= t("devise.shared.minimum_password_length", count: @minimum_password_length) %></em>
     <% end %>
-    <em class="form-text"><%= I18n.t("devise.registrations.edit.leave_blank_if_you_don_t_want_to_change_it") %></em>
+    <em class="form-text"><%= t("devise.registrations.edit.leave_blank_if_you_don_t_want_to_change_it") %></em>
     <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
   </div>
 
@@ -31,20 +31,20 @@
   <div class="field mb-3 col-6">
     <%= f.label :current_password, class: "form-label" %>
     <em class="form-text">
-      <%= I18n.t("devise.registrations.edit.we_need_your_current_password_to_confirm_your_changes") %>
+      <%= t("devise.registrations.edit.we_need_your_current_password_to_confirm_your_changes") %>
     </em>
     <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
   </div>
 
   <div class="actions mb-3 col-6">
-    <%= f.submit I18n.t("devise.registrations.edit.update"), class: "btn btn-primary" %>
+    <%= f.submit t("devise.registrations.edit.update"), class: "btn btn-primary" %>
   </div>
 <% end %>
 
 <div class="mb-3 col-6">
-  <h3 class="mb-2"><%= I18n.t("devise.registrations.destroy") %></h3>
-  <%= button_to I18n.t("devise.registrations.destroy_action"), registration_path(resource_name),
-    class: "btn btn-danger", form: { data: { turbo_confirm: I18n.t("devise.registrations.edit.are_you_sure") } }, method: :delete %>
+  <h3 class="mb-2"><%= t("devise.registrations.destroy") %></h3>
+  <%= button_to t("devise.registrations.destroy_action"), registration_path(resource_name),
+    class: "btn btn-danger", form: { data: { turbo_confirm: t("devise.registrations.edit.are_you_sure") } }, method: :delete %>
 </div>
 
-<%= link_to I18n.t("views.links.back"), :back %>
+<%= link_to t("views.links.back"), :back %>
