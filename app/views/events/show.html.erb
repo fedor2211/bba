@@ -16,9 +16,9 @@
 
           <% if current_user_can_edit?(@event) %>
             <div class="d-flex justify-content-start">
-              <%= link_to t(".events.update_action"), edit_event_path(@event),
+              <%= link_to t("views.events.update_action"), edit_event_path(@event),
                 class: "btn btn-primary m-1" %>
-              <%= button_to t(".events.destroy.action"), event_path(@event),
+              <%= button_to t("views.events.destroy.action"), event_path(@event),
                 class: "btn btn-danger m-1", form: { data: { turbo_confirm: t(".events.destroy.are_you_sure") } }, method: :delete %>
             </div>
           <% end%>
