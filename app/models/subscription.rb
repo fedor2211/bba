@@ -22,14 +22,14 @@ class Subscription < ApplicationRecord
   private
 
   def not_event_host
-    errors.add(
-      :base, I18n.t("activerecord.errors.events.user_error")
-    ) if event.user == user
+    if event.user == user
+      errors.add(:base, I18n.t("activerecord.errors.events.user_error"))
+    end
   end
 
   def user_email_unique
-    errors.add(
-      :base, I18n.t("activerecord.errors.events.event_error")
-    ) if !user.present? && User.where(email: user_email).exists?
+    if !user.present? && User.where(email: user_email).exists?
+      errors.add(:base, I18n.t("activerecord.errors.events.event_error"))
+    end
   end
 end
