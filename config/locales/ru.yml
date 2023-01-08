@@ -34,6 +34,9 @@ ru:
       events:
         user_error: "Нельзя подписаться на своё событие"
         event_error: "Пользователь с данным email уже зарегистрирован"
+      subscriptions:
+        email_subscribed: "уже имеется среди подписанных на событие"
+        user_subscribed: "уже подписан на событие"
 
 
   controllers:

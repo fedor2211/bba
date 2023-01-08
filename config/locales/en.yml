@@ -37,6 +37,9 @@ en:
     errors:
       events:
         user_error: "Subscription to owned event is impossible"
+      subscriptions:
+        email_subscribed: "is already aming subscribed"
+        user_subscribed: "is already subscribed"
 
   views:
     navbar:

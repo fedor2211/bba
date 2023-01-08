@@ -3,12 +3,19 @@ class Subscription < ApplicationRecord
   belongs_to :user, optional: true
 
   validate :not_event_host
-  validate :user_email_unique
+  validate :email_not_registered, unless: -> { user.present? }
 
-  validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
+  validates :user, uniqueness: {
+                     scope: :event_id,
+                     message: I18n.t("activerecord.errors.subscriptions.user_subscribed")
+                   },
+                   if: -> { user.present? }
   validates :user_name, presence: true, unless: -> { user.present? }
-  validates :user_email, uniqueness: { scope: :event_id },
-                         presence: true, format: /\A\w+@\w+\.[a-zA-Z]+\z/,
+  validates :user_email, presence: true, format: /\A\w+@\w+\.[a-zA-Z]+\z/,
+                         uniqueness: {
+                           scope: :event_id,
+                           message: I18n.t("activerecord.errors.subscriptions.email_subscribed")
+                         },
                          unless: -> { user.present? }
 
   def user_name
@@ -27,8 +34,8 @@ class Subscription < ApplicationRecord
     end
   end
 
-  def user_email_unique
-    if !user.present? && User.where(email: user_email).exists?
+  def email_not_registered
+    if User.where(email: user_email).exists?
       errors.add(:base, I18n.t("activerecord.errors.events.event_error"))
     end
   end
