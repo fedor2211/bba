@@ -10,13 +10,12 @@ class Subscription < ApplicationRecord
                      message: I18n.t("activerecord.errors.subscriptions.user_subscribed")
                    },
                    if: -> { user.present? }
-  validates :user_name, presence: true, unless: -> { user.present? }
+  validates :user_name, presence: true
   validates :user_email, presence: true, format: /\A\w+@\w+\.[a-zA-Z]+\z/,
                          uniqueness: {
                            scope: :event_id,
                            message: I18n.t("activerecord.errors.subscriptions.email_subscribed")
-                         },
-                         unless: -> { user.present? }
+                         }
 
   def user_name
     user.present? ? user.name : super
