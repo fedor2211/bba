@@ -1,7 +1,7 @@
 <div class="event">
   <div class="event-info row rounded">
-    <%= content_tag 'div', '', class: 'event-background',
-      style: "background-image: url(#{asset_path('event_thumb.jpg')})" %>
+    <%= content_tag "div", "", class: "event-background",
+      style: "background-image: url(#{event_photo(@event)})" %>
     <div class="col-md-12">
 
       <div class="event-info-inner row p-3">
@@ -28,24 +28,16 @@
   </div>
   <div class="row">
     <div class="col-md-8">
-      <div class="event-comments buffer-top">
-        <div class="my-3">
-          <%= render partial: "comments/form", locals: {
-            comment: @new_comment || @event.comments.build,
-            event: @event
-          } %>
-        </div>
-        <div class="my-3">
-          <h4 class="py-3 border-bottom"><%= t("views.comments.plural") %></h4>
-          <%= render partial: "comments/comment",
-            collection: @event.comments.except(@new_comment) %>
+      <div class="event-photos">
+        <div class="event-photos-gallery">
+          <%= render partial: "photos/photo", collection: @event.photos.except(@new_photo) %>
         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="event-owner mb-3">
         <h4><%= t("views.events.host") %></h4>
-          <p><%= render partial: 'users/user', object: @event.user %></p>
+          <p><%= render partial: "users/user", object: @event.user %></p>
       </div>
       <div class="event-subscriptions mb-3">
         <h4><%= t("views.events.participants") %></h4>
@@ -65,6 +57,28 @@
           </div>
         </div>
       <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= render "photos/form", event: @event, photo: @new_photo || @event.photos.build %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="event-comments buffer-top">
+        <div class="my-3">
+          <%= render partial: "comments/form", locals: {
+            comment: @new_comment || @event.comments.build,
+            event: @event
+          } %>
+        </div>
+        <div class="my-3">
+          <h4 class="py-3 border-bottom"><%= t("views.comments.plural") %></h4>
+          <%= render partial: "comments/comment",
+            collection: @event.comments.except(@new_comment) %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

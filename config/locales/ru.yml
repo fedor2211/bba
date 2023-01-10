@@ -8,6 +8,7 @@ ru:
       event: "Событие"
       comment: "Комментарий"
       subscription: "Подписка"
+      photo: "Фото"
 
     attributes:
       user:
@@ -29,6 +30,8 @@ ru:
       subscription:
         user_name: "Имя пользователя"
         user_email: "Email"
+      photo:
+        photo: "Фотография"
 
     errors:
       events:
@@ -56,6 +59,10 @@ ru:
       created: "Вы добавили комментарий к событию"
       destroyed: "Вы удалили комментарий к событию"
       error: "Ошибка при операции с комментарием"
+    photos:
+      error: "Что-то не так с фоткой"
+      created: "Вы добавили фотографию к событию"
+      destroyed: "Вы удалили фотку"
 
   views:
     users:
@@ -86,6 +93,10 @@ ru:
         confirm: "Вы уверены, что хотите удалить эту подписку?"
       create: "Подписаться"
       form_title: "Я пойду:"
+    photos:
+      added: "Добавил"
+      destroy: "Удалить"
+      are_you_sure: "Удалить фото?"
     links:
       back: "Назад"
       profile: "Профиль"
