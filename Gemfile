@@ -13,7 +13,7 @@ gem "turbo-rails", "~> 1.3"
 gem "rails-i18n", "~> 7.0"
 gem "devise-i18n", "~> 1.10"
 gem "image_processing", ">= 1.2"
-gem "dotenv", "~> 2.8"
+gem "dotenv-rails", "~> 2.8"
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
