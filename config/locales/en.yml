@@ -41,6 +41,11 @@ en:
         email_subscribed: "is already aming subscribed"
         user_subscribed: "is already subscribed"
 
+  mailers:
+    events:
+      new_subscription: "New subscription for"
+      new_comment: "New comment for"
+
   views:
     navbar:
       profile_link: "Profile"
@@ -63,6 +68,7 @@ en:
       form_save_label: "Save"
       host: "Host:"
       participants: "Participants:"
+      new_subscription: "New subscription"
     comments:
       destroy:
         action: "Delete"
@@ -75,3 +81,18 @@ en:
       sign_out: "Sign out"
       sign_in: "Sign in"
       sign_up: "Sign up"
+  event_mailer:
+    comment:
+      title: "New comment"
+      author: "Author"
+      event: "Event"
+      datetime: "Datetime"
+      owner: "Host"
+    subscription:
+      title: "New subscription"
+      name: "Name"
+      email: "Email"
+      author: "Author"
+      event: "Event"
+      datetime: "Datetime"
+      owner: "Host"
