@@ -12,5 +12,5 @@ yandex:
   secret_access_key: <%= ENV["S3_SECRET_ACCESS_KEY"] %>
   bucket: <%= ENV["S3_BUCKET"] %>
   endpoint: <%= ENV["S3_ENDPOINT"] %>
-  region: <%= ENV["AWS_REGION"]
+  region: <%= ENV["AWS_REGION"] %>
   force_path_style: true
