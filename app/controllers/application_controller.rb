@@ -16,5 +16,4 @@ class ApplicationController < ActionController::Base
       (model.try(:event).present? && model.event.user == current_user)
     )
   end
-
 end

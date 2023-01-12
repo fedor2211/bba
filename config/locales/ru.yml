@@ -68,6 +68,7 @@ ru:
     events:
       new_subscription: "Новая подписка на"
       new_comment: "Новый комментарий"
+      new_photo: "Новое фото"
 
   views:
     users:
@@ -118,6 +119,14 @@ ru:
       owner: "Организатор"
     subscription:
       title: "Новая подписка"
+      name: "Имя"
+      email: "Email"
+      author: "Автор"
+      event: "Событие"
+      datetime: "Состоится"
+      owner: "Организатор"
+    photo:
+      title: "Новое фото"
       name: "Имя"
       email: "Email"
       author: "Автор"

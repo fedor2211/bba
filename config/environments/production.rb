@@ -78,4 +78,5 @@ Rails.application.configure do
   }
   config.action_mailer.raise_delivery_errors = true
   config.active_storage.service = :yandex
+  config.asset_host = ENV["HOST_NAME"]
 end
