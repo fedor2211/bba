@@ -4,10 +4,10 @@
 <hr/>
 
 <%= t(".event") %>
-<h3><%= @event.title %></h3>
+<h3><%= link_to(@event.title, @event)%></h3>
 
 <div>
-  <%= image_tag(@photo.photo.variant(:common)) %>
+  <%= image_tag(@photo.photo.variant(:thumb)) %>
 </div>
 
 <%= t(".datetime") %>
