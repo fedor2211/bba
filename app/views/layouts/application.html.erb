@@ -7,8 +7,8 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application" %>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=<%= ENV["YMAPS_API_KEY"] %>" type="text/javascript"></script>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=<%= ENV["YMAPS_API_KEY"] %>" type="text/javascript"></script>
   </head>
 
   <body>
