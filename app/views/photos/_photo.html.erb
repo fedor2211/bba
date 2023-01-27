@@ -1,12 +1,5 @@
 <div class="event-photo buffer-both d-flex align-items-center">
   <%= link_to image_tag(photo.photo.variant(:thumb)),
-    url_for(photo.photo), class: "me-3 photo-icon", data: { gallery: "event-gallery"} %>
-  <span class="me-3"><%= I18n.t("views.photos.added") %></span>
-  <%= render partial: "users/user", object: photo.user %>
-  <% if current_user_can_edit?(photo) %>
-    <%= button_to fa_icon("trash"), event_photo_path(photo.event, photo),
-      form: { data: { turbo_confirm: t("views.photos.are_you_sure") } },
-      method: :delete,
-      class: "btn" %>
-  <% end %>
+    url_for(photo.photo), class: "me-3 photo-icon",
+    data: { gallery: "event-gallery", caption: "#{ render "photos/photo_caption", photo: photo }"} %>
 </div>

@@ -1,0 +1,7 @@
+<span class="me-3"><%= I18n.t("views.photos.added") %></span>
+<%= render partial: "users/user", object: photo.user %>
+<% if current_user_can_edit?(photo) %>
+  <%= link_to fa_icon("trash"), event_photo_path(photo.event, photo),
+    data: { turbo_confirm: t("views.photos.are_you_sure"), turbo_method: :delete },
+    class: "btn" %>
+<% end %>
