@@ -5,6 +5,7 @@
     "@hotwired/turbo-rails": "^7.2.4",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "bs5-lightbox": "^1.8.2",
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
     "jquery": "^3.6.3",
