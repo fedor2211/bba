@@ -19,7 +19,7 @@ set :deploy_to, "/home/admin/bbq"
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, '.env.production'
+append :linked_files, '.env.production', 'config/master.key', 'config/credentials/production.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
 # Default value for linked_dirs is []
