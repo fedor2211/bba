@@ -14,9 +14,12 @@ gem "rails-i18n", "~> 7.0"
 gem "devise-i18n", "~> 1.10"
 gem "image_processing", ">= 1.2"
 gem "dotenv-rails", "~> 2.8"
+gem "pundit", "~> 2.3"
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "rspec-rails", "~> 6.0"
+  gem "factory_bot_rails", "~> 6.2"
   gem "capistrano", "~> 3.17"
   gem "capistrano-rails", "~> 1.6"
   gem "capistrano-passenger", "~> 0.2.1"

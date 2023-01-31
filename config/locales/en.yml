@@ -96,3 +96,5 @@ en:
       event: "Event"
       datetime: "Datetime"
       owner: "Host"
+  pundit:
+    not_authorized: "This is not allowed for you!"
