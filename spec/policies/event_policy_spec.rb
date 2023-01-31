@@ -7,6 +7,11 @@ RSpec.describe EventPolicy do
 
   subject { EventPolicy }
 
+  permissions :index? do
+    it { is_expected.to permit(user1) }
+    it { is_expected.to permit(nil) }
+  end
+
   permissions :create? do
     it { is_expected.to permit(user1) }
     it { is_expected.not_to permit(nil) }
