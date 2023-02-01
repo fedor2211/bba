@@ -71,6 +71,6 @@ Rails.application.configure do
   config.active_storage.service = :local
   config.asset_host = "localhost:3000"
 
-  config.active_job.queue_adapter = :resque
-  config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
+  # config.active_job.queue_adapter = :resque
+  # config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
 end
