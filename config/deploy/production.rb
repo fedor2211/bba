@@ -49,7 +49,10 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server "sdfsdfsdf.site",
-  user: "admin",
-  roles: %w{web app db},
-  forward_agent: true
+server 'sdfsdfsdf.site',
+       user: 'admin',
+       roles: %w[web app db resque_worker],
+       forward_agent: true
+
+set :resque_environment_task, true
+set :workers, { "#{fetch(:application)}*" => 1 }

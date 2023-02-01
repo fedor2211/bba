@@ -15,6 +15,7 @@ gem "devise-i18n", "~> 1.10"
 gem "image_processing", ">= 1.2"
 gem "dotenv-rails", "~> 2.8"
 gem "pundit", "~> 2.3"
+gem "resque", "~> 2.4"
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
@@ -25,6 +26,9 @@ group :development, :test do
   gem "capistrano-passenger", "~> 0.2.1"
   gem "capistrano-rbenv", "~> 2.2"
   gem "capistrano-bundler", "~> 2.1"
+  gem "capistrano-resque", "~> 0.2.3"
+  gem "letter_opener", "~> 1.8"
+  gem "bullet", "~> 7.0"
 end
 
 group :production do

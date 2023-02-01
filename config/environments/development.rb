@@ -67,6 +67,10 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :letter_opener
   config.active_storage.service = :local
   config.asset_host = "localhost:3000"
+
+  config.active_job.queue_adapter = :resque
+  config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
 end
