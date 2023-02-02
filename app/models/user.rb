@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable
+         :confirmable, :omniauthable, omniauth_providers: %i[github]
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :subscriptions
@@ -14,10 +14,21 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :email, presence: true, uniqueness: true
-  validates :email, length: { maximum: 40 }, format: { with: /\A[\w.]+@[\w.]+\.[A-Za-z]+\z/ }
+  validates :email, length: { maximum: 40 },
+                    format: { with: /\A[\w.]+@[\w.]+\.[A-Za-z]+\z/ }
 
   before_validation :set_name, on: :create
   after_commit :link_subscriptions
+
+  def self.from_omniauth(auth)
+    user = find_or_initialize_by(provider: auth.provider, uid: auth.uid)
+    user.email = auth.info.email
+    user.password = Devise.friendly_token[0, 20] unless user.password.present?
+    user.name = auth.info.name
+    user.skip_confirmation!
+    user.save
+    user
+  end
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
