@@ -51,8 +51,14 @@ en:
       current_password_needed: "(we need your current password to confirm your changes)"
     sessions:
       signed_in: "Signed in successfully."
+      oauth:
+        sign_in: "Sign in with other services"
+        vk: "Sign in with VK"
+        github: "Sign in with Github"
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        oauth: "Sing in with other services"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."

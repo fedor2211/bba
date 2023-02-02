@@ -23,13 +23,16 @@
   </div>
 <% end %>
 
+<h2 class="mb-3"><%= t("devise.sessions.oauth.sign_in") %></h2>
 <div class="mb-3">
-  <%= button_to "Sign in with Github",
+  <%= button_to t("devise.sessions.oauth.github"),
                 user_github_omniauth_authorize_path,
-                method: :post, data: { turbo: false } %>
-  <%= button_to "Sign in with Vkontakte",
+                method: :post, data: { turbo: false },
+                class: "btn btn-secondary mb-3" %>
+  <%= button_to t("devise.sessions.oauth.vk"),
                 user_vkontakte_omniauth_authorize_path,
-                method: :post, data: { turbo: false } %>
+                method: :post, data: { turbo: false },
+                class: "btn btn-secondary mb-3" %>
 <div>
 
 <%= render "devise/shared/links" %>
