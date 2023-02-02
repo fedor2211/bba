@@ -27,6 +27,9 @@
   <%= button_to "Sign in with Github",
                 user_github_omniauth_authorize_path,
                 method: :post, data: { turbo: false } %>
+  <%= button_to "Sign in with Vkontakte",
+                user_vkontakte_omniauth_authorize_path,
+                method: :post, data: { turbo: false } %>
 <div>
 
 <%= render "devise/shared/links" %>

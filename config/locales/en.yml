@@ -35,6 +35,8 @@ en:
     company: "Fedor S."
   activerecord:
     errors:
+      users:
+        exists: "user with such email already exists"
       events:
         user_error: "Subscription to owned event is impossible"
       subscriptions:
