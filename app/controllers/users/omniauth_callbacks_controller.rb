@@ -9,8 +9,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if is_navigational_format?
         set_flash_message(:notice, :failure,
                           kind: "Github",
-                          reason: I18n.t("activerecord.errors.users.exists"))
-        end
+                          reason: @user.errors.full_messages.join(" "))
+      end
       session["devise.github_data"] = request.env["omniauth.auth"].except(:extra)
       redirect_to new_user_registration_url
     end
@@ -26,8 +26,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if is_navigational_format?
         set_flash_message(:notice, :failure,
                           kind: "Vkontakte",
-                          reason: I18n.t("activerecord.errors.users.exists"))
-        end
+                          reason: @user.errors.full_messages.join(" "))
+      end
       session["devise.vkontakte_data"] = request.env["omniauth.auth"].except(:extra)
       redirect_to new_user_registration_url
     end
