@@ -21,10 +21,15 @@ class User < ApplicationRecord
   after_commit :link_subscriptions
 
   def self.from_omniauth(auth)
-    user = find_or_initialize_by(provider: auth.provider, uid: auth.uid)
-    user.email = auth.info.email
-    user.password = Devise.friendly_token[0, 20] unless user.password.present?
-    user.name = auth.info.name
+    user = find_by(email: auth.info.email)
+    unless user.present?
+      user = new
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20] unless user.password.present?
+      user.name = auth.info.name
+    end
     user.skip_confirmation!
     user.save
     user
