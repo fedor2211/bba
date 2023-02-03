@@ -143,6 +143,7 @@ ru:
         many: "(минимум %{count} знаков)"
         one: "(минимум %{count} знак)"
         other: "(минимум %{count} знаков)"
+      unnecessary_field: "(необязательное поле)"
     unlocks:
       new:
         resend_unlock_instructions: Выслать подтверждение заново

@@ -10,6 +10,7 @@
 
   <div class="field mb-3 col-6">
     <%= f.label :avatar, class: "form-label" %>
+    <em class="form-text"><%= t("devise.shared.unnecessary_field") %></em>
     <div class="form-group mb-2"><%= image_tag(@user.avatar.variant(:thumb)) if @user.avatar.attached? %></div>
     <%= f.file_field :avatar, class: "form-group" %>
   </div>

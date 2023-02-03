@@ -1,3 +1,5 @@
+require "open-uri"
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -33,6 +35,13 @@ class User < ApplicationRecord
     user.skip_confirmation!
     user.save
     user
+  end
+
+  def attach_avatar_from_url(url)
+    parsed_url = URI.parse(url)
+    filename = File.basename(parsed_url.path)
+    file = URI.open(parsed_url)
+    self.avatar.attach(io: file, filename: filename)
   end
 
   def send_devise_notification(notification, *args)
