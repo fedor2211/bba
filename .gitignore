@@ -37,6 +37,7 @@ yarn-debug.log*
 .vscode
 .idea
 .ruby-version
+.solargraph.yml
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
